@@ -60,7 +60,7 @@ function createWebServer(client) {
     }
   });
 
-  const port = process.env.DASHBOARD_PORT || 3000;
+  const port = process.env.PORT || process.env.DASHBOARD_PORT || 3000;
   app.listen(port, () => {
     console.log(`Веб-панель настройки запущена: http://localhost:${port}`);
   });
