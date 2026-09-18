@@ -1,0 +1,25 @@
+{
+  "panelChannelId": "1550154943296573594",
+  "ticketCategoryId": "1550154943296573592",
+  "supportRoleIds": [
+    "1550164794215235735"
+  ],
+  "closeRoleIds": [
+    "1550162720979034226"
+  ],
+  "embed": {
+    "title": "🎫 Поддержка",
+    "description": "Нажмите на кнопку ниже, чтобы создать тикет и описать вашу проблему.",
+    "color": "#990000",
+    "footer": "fhhfh"
+  },
+  "button": {
+    "label": "Создать тикет",
+    "style": "Primary",
+    "emoji": "🎫"
+  },
+  "ticketNameFormat": "ticket-{number}",
+  "ticketCounter": 1,
+  "panelMessageId": "1550164899517435908",
+  "welcomeMessage": "Спасибо за обращение, {user}! Опишите проблему подробнее, и в ближайшее время вам ответит сотрудник поддержки."
+}

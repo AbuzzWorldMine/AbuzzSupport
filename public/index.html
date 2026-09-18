@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Настройка бота поддержки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="login-screen" class="screen">
+    <div class="card">
+      <h1>Вход в панель</h1>
+      <input type="password" id="password-input" placeholder="Пароль панели">
+      <button id="login-btn" class="btn-primary btn-block">Войти</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <div id="dashboard-screen" class="screen hidden">
+    <div class="card wide">
+      <h1>Настройка бота поддержки</h1>
+
+      <section>
+        <h2>Расположение</h2>
+        <label>Канал для панели с кнопкой</label>
+        <select id="panelChannelId"></select>
+
+        <label>Категория, в которой создаются тикеты</label>
+        <select id="ticketCategoryId"></select>
+
+        <label>Роли поддержки <small>(видят каналы всех тикетов, зажмите Ctrl/Cmd для выбора нескольких)</small></label>
+        <select id="supportRoleIds" multiple size="5"></select>
+
+        <label>Роли, которые могут закрывать тикеты <small>(если не выбрано — используются роли поддержки выше)</small></label>
+        <select id="closeRoleIds" multiple size="5"></select>
+      </section>
+
+      <section>
+        <h2>Сообщение-панель</h2>
+        <label>Заголовок</label>
+        <input type="text" id="embedTitle">
+
+        <label>Описание</label>
+        <textarea id="embedDescription" rows="4"></textarea>
+
+        <label>Цвет embed</label>
+        <input type="color" id="embedColor">
+
+        <label>Подпись (footer)</label>
+        <input type="text" id="embedFooter">
+      </section>
+
+      <section>
+        <h2>Кнопка</h2>
+        <label>Текст кнопки</label>
+        <input type="text" id="buttonLabel">
+
+        <label>Стиль кнопки <small>(Discord не позволяет свой HEX-цвет для кнопок — только один из 4 стилей)</small></label>
+        <select id="buttonStyle">
+          <option value="Primary">Синий (Primary)</option>
+          <option value="Secondary">Серый (Secondary)</option>
+          <option value="Success">Зелёный (Success)</option>
+          <option value="Danger">Красный (Danger)</option>
+        </select>
+
+        <label>Эмодзи на кнопке</label>
+        <input type="text" id="buttonEmoji" placeholder="🎫">
+      </section>
+
+      <section>
+        <h2>Тикеты</h2>
+        <label>Формат названия канала <small>(доступно {number}, {user})</small></label>
+        <input type="text" id="ticketNameFormat">
+
+        <label>Приветственное сообщение внутри тикета <small>(доступно {user})</small></label>
+        <textarea id="welcomeMessage" rows="2"></textarea>
+      </section>
+
+      <button id="save-btn" class="btn-primary btn-block">Сохранить и обновить панель в Discord</button>
+      <p id="save-status"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
